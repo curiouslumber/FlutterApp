@@ -1,16 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:myskills/auth/google.dart';
 import 'authentication.dart';
+import 'text.dart';
 
 void main() async {
   runApp(MyApp());
-}
-
-class AdaptiveTextSize {
-  const AdaptiveTextSize();
-
-  getAdaptiveTextSize(BuildContext context, dynamic value) {
-    return (value / 720) * MediaQuery.of(context).size.height;
-  }
 }
 
 class MyApp extends StatefulWidget {
@@ -25,10 +19,9 @@ class _AppState extends State<MyApp> {
       title: 'Main Page',
       initialRoute: '/',
       routes: {
-        // When navigating to the "/" route, build the FirstScreen widget.
         '/': (context) => const Home(),
-        // When navigating to the "/second" route, build the SecondScreen widget.
         '/second': (context) => Authentication(),
+        '/google': (context) => GoogleSign()
       },
     );
   }
